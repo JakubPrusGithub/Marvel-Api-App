@@ -7,6 +7,43 @@
 
 import Foundation
 
+/*
+    --- API CONSTRUCTION MODEL ---
+ 
+    API struct hierarchy:
+ 
+    *APIrequest*
+        - data: APIdata
+            - results: [Comic]
+                - id: Sting
+                - title: String
+                - description: String
+                - thumbnail: APIthumbnail
+                    - path: String              # URL String to image wihtout "https" and size
+                    - link: String              # URL String to image 150x225px
+                    - linkDetail: String        # URL String to image 216x324px
+                - creators: APIauthors
+                    - items: [APIauthor]
+                        - name: String
+ 
+
+ 
+ 
+ 
+ 
+    --- IMAGE URL CONSTRUCTION MODEL ---
+ 
+    Scheme to construct an image from api:
+    <URL from API> + <sizing> + <.extension>
+    
+    Remember: convert URL from "http" to "https" & <.extension> is ".jpg" preferred
+ 
+    Link for naming sizing and ratios of images:
+    https://developer.marvel.com/documentation/images
+ 
+ 
+*/
+
 struct APIauthor: Codable{
     var name: String? = ""
 }
@@ -48,19 +85,5 @@ struct APIdata: Codable {
 }
 
 struct APIrequest: Codable{
-    var status: String? = ""
     var data: APIdata? = APIdata()
-    
-    
-    
-//    enum CodingKeys:String, CodingKey {
-//        case status = "status"
-//        case data = "data"
-//    }
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.status = try container.decode(String.self, forKey: .status)
-//        self.data = try container.decode(APIdata.self, forKey: .data)
-//        self.id = UUID()
-//    }
 }

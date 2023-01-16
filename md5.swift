@@ -14,3 +14,5 @@ extension String {
         return computed.map{ String(format: "%02hhx", $0) }.joined()
     }
 }
+
+// For more information about MD5 visit: https://en.wikipedia.org/wiki/MD5

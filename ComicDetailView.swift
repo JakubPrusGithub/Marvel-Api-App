@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ComicDetailView: View {
     
+    // The sheet is presented first by default
     @State var presentingSheet = true
     
     let comic: Comic
     let imageURL: String
+    
+    // Appending all authors to a single String
     var allAuthors: String {
         var authors = ""
         for i in 0..<(comic.creators?.items!.count)! {
