@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D3F343E729736A7D003CE063 /* ZadanieRekrutacyjne01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZadanieRekrutacyjne01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3F343E729736A7D003CE063 /* MarvelComicsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelComicsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F343EA29736A7D003CE063 /* ZadanieRekrutacyjne01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZadanieRekrutacyjne01App.swift; sourceTree = "<group>"; };
 		D3F343EC29736A7D003CE063 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D3F343EE29736A7F003CE063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		D3F343DE29736A7D003CE063 = {
 			isa = PBXGroup;
 			children = (
-				D3F343E929736A7D003CE063 /* ZadanieRekrutacyjne01 */,
+				D3F343E929736A7D003CE063 /* MarvelComicsApp */,
 				D3F343E829736A7D003CE063 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,12 +51,12 @@
 		D3F343E829736A7D003CE063 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D3F343E729736A7D003CE063 /* ZadanieRekrutacyjne01.app */,
+				D3F343E729736A7D003CE063 /* MarvelComicsApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D3F343E929736A7D003CE063 /* ZadanieRekrutacyjne01 */ = {
+		D3F343E929736A7D003CE063 /* MarvelComicsApp */ = {
 			isa = PBXGroup;
 			children = (
 				D3F343EA29736A7D003CE063 /* ZadanieRekrutacyjne01App.swift */,
@@ -68,7 +68,7 @@
 				D3F343EE29736A7F003CE063 /* Assets.xcassets */,
 				D3F343F029736A7F003CE063 /* Preview Content */,
 			);
-			path = ZadanieRekrutacyjne01;
+			path = MarvelComicsApp;
 			sourceTree = "<group>";
 		};
 		D3F343F029736A7F003CE063 /* Preview Content */ = {
@@ -82,9 +82,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D3F343E629736A7D003CE063 /* ZadanieRekrutacyjne01 */ = {
+		D3F343E629736A7D003CE063 /* MarvelComicsApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3F343F529736A7F003CE063 /* Build configuration list for PBXNativeTarget "ZadanieRekrutacyjne01" */;
+			buildConfigurationList = D3F343F529736A7F003CE063 /* Build configuration list for PBXNativeTarget "MarvelComicsApp" */;
 			buildPhases = (
 				D3F343E329736A7D003CE063 /* Sources */,
 				D3F343E429736A7D003CE063 /* Frameworks */,
@@ -94,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = ZadanieRekrutacyjne01;
+			name = MarvelComicsApp;
 			productName = ZadanieRekrutacyjne01;
-			productReference = D3F343E729736A7D003CE063 /* ZadanieRekrutacyjne01.app */;
+			productReference = D3F343E729736A7D003CE063 /* MarvelComicsApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D3F343E229736A7D003CE063 /* Build configuration list for PBXProject "ZadanieRekrutacyjne01" */;
+			buildConfigurationList = D3F343E229736A7D003CE063 /* Build configuration list for PBXProject "MarvelComicsApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D3F343E629736A7D003CE063 /* ZadanieRekrutacyjne01 */,
+				D3F343E629736A7D003CE063 /* MarvelComicsApp */,
 			);
 		};
 /* End PBXProject section */
@@ -282,7 +282,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ZadanieRekrutacyjne01/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MarvelComicsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 2637HTLV24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -297,7 +297,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.ZadanieRekrutacyjne01;
+				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.MarvelComicsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -315,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ZadanieRekrutacyjne01/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MarvelComicsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 2637HTLV24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -330,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.ZadanieRekrutacyjne01;
+				PRODUCT_BUNDLE_IDENTIFIER = JakubPrus.MarvelComicsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -344,7 +344,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D3F343E229736A7D003CE063 /* Build configuration list for PBXProject "ZadanieRekrutacyjne01" */ = {
+		D3F343E229736A7D003CE063 /* Build configuration list for PBXProject "MarvelComicsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3F343F329736A7F003CE063 /* Debug */,
@@ -353,7 +353,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D3F343F529736A7F003CE063 /* Build configuration list for PBXNativeTarget "ZadanieRekrutacyjne01" */ = {
+		D3F343F529736A7F003CE063 /* Build configuration list for PBXNativeTarget "MarvelComicsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3F343F629736A7F003CE063 /* Debug */,
