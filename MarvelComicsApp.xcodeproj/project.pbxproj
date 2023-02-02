@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3F343EB29736A7D003CE063 /* ZadanieRekrutacyjne01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F343EA29736A7D003CE063 /* ZadanieRekrutacyjne01App.swift */; };
+		D3F343EB29736A7D003CE063 /* MarvelComicsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F343EA29736A7D003CE063 /* MarvelComicsApp.swift */; };
 		D3F343ED29736A7D003CE063 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F343EC29736A7D003CE063 /* ContentView.swift */; };
 		D3F343EF29736A7F003CE063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F343EE29736A7F003CE063 /* Assets.xcassets */; };
 		D3F343F229736A7F003CE063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F343F129736A7F003CE063 /* Preview Assets.xcassets */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		D3F343E729736A7D003CE063 /* MarvelComicsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelComicsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3F343EA29736A7D003CE063 /* ZadanieRekrutacyjne01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZadanieRekrutacyjne01App.swift; sourceTree = "<group>"; };
+		D3F343EA29736A7D003CE063 /* MarvelComicsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelComicsApp.swift; sourceTree = "<group>"; };
 		D3F343EC29736A7D003CE063 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D3F343EE29736A7F003CE063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3F343F129736A7F003CE063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		D3F343E929736A7D003CE063 /* MarvelComicsApp */ = {
 			isa = PBXGroup;
 			children = (
-				D3F343EA29736A7D003CE063 /* ZadanieRekrutacyjne01App.swift */,
+				D3F343EA29736A7D003CE063 /* MarvelComicsApp.swift */,
 				D3F344492974B2F0003CE063 /* ComicDetailView.swift */,
 				D3F343EC29736A7D003CE063 /* ContentView.swift */,
 				D3F343FA297370AA003CE063 /* ComicStruct.swift */,
@@ -153,7 +153,7 @@
 				D3F343FB297370AA003CE063 /* ComicStruct.swift in Sources */,
 				D3F343ED29736A7D003CE063 /* ContentView.swift in Sources */,
 				D3F3444829739A76003CE063 /* md5.swift in Sources */,
-				D3F343EB29736A7D003CE063 /* ZadanieRekrutacyjne01App.swift in Sources */,
+				D3F343EB29736A7D003CE063 /* MarvelComicsApp.swift in Sources */,
 				D3F3444A2974B2F0003CE063 /* ComicDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

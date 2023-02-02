@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  ZadanieRekrutacyjne01
+//  MarvelComicsApp
 //
 //  Created by Jakub Prus on 14/01/2023.
 //
