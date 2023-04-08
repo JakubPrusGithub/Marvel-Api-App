@@ -1,13 +1,14 @@
 //
-//  ComicDetailView.swift
+//  DetailView.swift
 //  MarvelComicsApp
 //
 //  Created by Jakub Prus on 15/01/2023.
+//  Refactored by Jakub Prus on 08/04/2023.
 //
 
 import SwiftUI
 
-struct ComicDetailView: View {
+struct DetailView: View {
     
     // The sheet is presented first by default
     @State var presentingSheet = true
@@ -65,8 +66,8 @@ struct ComicDetailView: View {
     }
 }
 
-struct ComicDetailView_Previews: PreviewProvider {
+struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ComicDetailView(comic: Comic(title: "Title of a Marvel Comic", description: "Very long and detailed description about currently selected Marvel comic", creators: APIauthors(items: [APIauthor(name: "Anonymous")])), imageURL: "https://i.annihil.us/u/prod/marvel/i/mg/1/30/56538fd257915/portrait_xlarge.jpg")
+        DetailView(comic: Comic(title: "Title of a Marvel Comic", description: "Very long and detailed description about currently selected Marvel comic", creators: APIauthors(items: [APIauthor(name: "Anonymous")])), imageURL: "https://i.annihil.us/u/prod/marvel/i/mg/1/30/56538fd257915/portrait_xlarge.jpg")
     }
 }

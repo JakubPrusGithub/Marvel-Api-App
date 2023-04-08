@@ -1,8 +1,9 @@
 //
-//  ComicStruct.swift
+//  ComicModel.swift
 //  MarvelComicsApp
 //
 //  Created by Jakub Prus on 15/01/2023.
+//  Refactored by Jakub Prus on 08/04/2023.
 //
 
 import Foundation

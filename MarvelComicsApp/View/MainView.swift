@@ -1,21 +1,22 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  MarvelComicsApp
 //
 //  Created by Jakub Prus on 14/01/2023.
+//  Refactored by Jakub Prus on 08/04/2023.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     
-    @StateObject var allComics = AllComics()
+    @StateObject var vm = ComicsViewModel()
     @State var searchedTitle = ""
     var searchResults: [Comic] {
         if searchedTitle.isEmpty {
-            return (allComics.comics.data?.results)!
+            return (vm.allComics.data?.results)!
         }else{
-            return (allComics.comics.data?.results?.filter { ($0.title?.localizedCaseInsensitiveContains(searchedTitle))!})!
+            return (vm.allComics.data?.results?.filter { ($0.title?.localizedCaseInsensitiveContains(searchedTitle))!})!
         }
     }
     
@@ -23,7 +24,7 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 ForEach(searchResults) { comic in
-                    NavigationLink(destination: ComicDetailView(comic: comic, imageURL: comic.thumbnail?.linkDetail ?? "")){
+                    NavigationLink(destination: DetailView(comic: comic, imageURL: comic.thumbnail?.linkDetail ?? "")){
                         HStack(){
                             AsyncImage(
                                 url: URL(string: comic.thumbnail?.link ?? ""),
@@ -58,14 +59,17 @@ struct ContentView: View {
                     .foregroundColor(.black)
                 }
             }
+            .task{
+                vm.allComics = await ComicsDownloader().downloadData() ?? APIrequest()
+            }
             .navigationTitle("Marvel Comics")
             .searchable(text: $searchedTitle, prompt: "Search your comic's title")
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
