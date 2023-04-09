@@ -9,7 +9,6 @@ import Foundation
 
 class ComicViewModel: ObservableObject {
     
-    
     func getAuthors(comic: Comic) -> String {
         guard
             let creators = comic.creators,

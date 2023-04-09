@@ -8,9 +8,14 @@
 import Foundation
 
 class MainViewModel: ObservableObject {
-    @Published var allComics = APIrequest()
     
+    @Published var allComics = APIrequest()
     @Published var searchedTitle = ""
+    var comicsDownloader: ComicsProvider
+    
+    init(comicsDownloader: ComicsProvider) {
+        self.comicsDownloader = comicsDownloader
+    }
     
     var searchResults: [Comic] {
         guard
@@ -24,5 +29,12 @@ class MainViewModel: ObservableObject {
         else {
             return results.filter { ($0.title?.localizedCaseInsensitiveContains(searchedTitle)) ?? false }
         }
+    }
+    
+    @MainActor
+    func fetchComics() async {
+        let downloaded = await comicsDownloader.downloadData()
+        guard let downloaded else { return }
+        self.allComics = downloaded
     }
 }

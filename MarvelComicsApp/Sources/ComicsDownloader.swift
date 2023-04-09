@@ -8,8 +8,11 @@
 
 import Foundation
 
-final class ComicsDownloader {
-    
+protocol ComicsProvider {
+    func downloadData() async -> APIrequest?
+}
+
+class ComicsDownloader: ComicsProvider {
     func downloadData() async -> APIrequest? {
         let ts = String("\(NSDate().timeIntervalSince1970)")                                      // Timestamp since 1970
         
@@ -40,5 +43,22 @@ final class ComicsDownloader {
             print(error.localizedDescription)
         }
         return nil
+    }
+}
+
+class MockComicsDownloader: ComicsProvider {
+    
+    let comics = APIrequest(data: APIdata(
+        results: [
+            Comic(id: 1, title: "First title", description: "First description", thumbnail: .sampleAPIthumbnail, creators: APIauthors(items: [APIauthor(name: "First author")])),
+            
+            Comic(id: 2, title: "Second title", description: "Second description", thumbnail: .sampleAPIthumbnail, creators: APIauthors(items: [APIauthor(name: "Second author")])),
+            
+            Comic(id: 3, title: "Third title", description: "Third description", thumbnail: .sampleAPIthumbnail, creators: APIauthors(items: [APIauthor(name: "Third author")]))
+        ]))
+    
+    func downloadData() async -> APIrequest? {
+        try? await Task.sleep(nanoseconds: 3_000_000_000)
+        return comics
     }
 }

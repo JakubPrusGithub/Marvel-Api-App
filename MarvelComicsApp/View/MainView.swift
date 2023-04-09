@@ -10,7 +10,11 @@ import SwiftUI
 
 struct MainView: View {
     
-    @StateObject var vm = MainViewModel()
+    @StateObject var vm: MainViewModel
+    
+    init(comicsDownloader: ComicsProvider) {
+        _vm = StateObject(wrappedValue: MainViewModel(comicsDownloader: comicsDownloader))
+    }
     
     var body: some View {
         NavigationView {
@@ -28,9 +32,7 @@ struct MainView: View {
             .navigationTitle("Marvel Comics")
             .searchable(text: $vm.searchedTitle, prompt: "Search your comic's title")
             .task{
-                let response = await ComicsDownloader().downloadData()
-                guard let response = response else { return }
-                vm.allComics = response
+                await vm.fetchComics()
             }
             
         } // NavigationView
@@ -52,6 +54,6 @@ extension MainView {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(comicsDownloader: MockComicsDownloader())
     }
 }

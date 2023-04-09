@@ -12,7 +12,8 @@ import SwiftUI
 struct MarvelComicsApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            //MainView(comicsDownloader: ComicsDownloader())
+            MainView(comicsDownloader: MockComicsDownloader())
         }
     }
 }

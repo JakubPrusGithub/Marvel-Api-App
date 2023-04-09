@@ -73,6 +73,8 @@ struct APIthumbnail: Codable {
         let ext = "/portrait_incredible.jpg"
         return pathUnwrapped+ext
     }
+    
+    static let sampleAPIthumbnail = APIthumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available")
 }
 
 struct Comic: Codable, Identifiable {
@@ -81,6 +83,8 @@ struct Comic: Codable, Identifiable {
     var description: String?
     var thumbnail: APIthumbnail?
     var creators: APIauthors?
+    
+    static let sampleComic = Comic(id: 1, title: "Sample title", description: "Sample description", thumbnail: APIthumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"), creators: APIauthors(items: [APIauthor(name: "Sample author")]))
 }
 
 struct APIdata: Codable {
