@@ -46,15 +46,16 @@ import Foundation
 */
 
 struct APIauthor: Codable{
-    var name: String? = ""
+    var name: String?
 }
 
 struct APIauthors: Codable {
-    var items: [APIauthor]? = [APIauthor]()
+    var items: [APIauthor]?
 }
 
 struct APIthumbnail: Codable {
-    var path: String? = ""
+    var path: String?
+    
     var link: String {
         guard var pathUnwrapped = path else { return "" }
         if let range = pathUnwrapped.range(of: "http"){
@@ -63,6 +64,7 @@ struct APIthumbnail: Codable {
         let ext = "/portrait_xlarge.jpg"
         return pathUnwrapped+ext
     }
+    
     var linkDetail: String {
         guard var pathUnwrapped = path else { return "" }
         if let range = pathUnwrapped.range(of: "http"){
@@ -74,17 +76,17 @@ struct APIthumbnail: Codable {
 }
 
 struct Comic: Codable, Identifiable {
-    var id: Int? = Int()
-    var title: String? = ""
-    var description: String? = ""
-    var thumbnail: APIthumbnail? = APIthumbnail()
-    var creators: APIauthors? = APIauthors()
+    var id: Int?
+    var title: String?
+    var description: String?
+    var thumbnail: APIthumbnail?
+    var creators: APIauthors?
 }
 
 struct APIdata: Codable {
-    var results: [Comic]? = [Comic]()
+    var results: [Comic]?
 }
 
 struct APIrequest: Codable{
-    var data: APIdata? = APIdata()
+    var data: APIdata?
 }

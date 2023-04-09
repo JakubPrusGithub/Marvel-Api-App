@@ -9,7 +9,6 @@
 import Foundation
 
 final class ComicsDownloader {
-    //@Published var comics = APIrequest()
     
     func downloadData() async -> APIrequest? {
         let ts = String("\(NSDate().timeIntervalSince1970)")                                      // Timestamp since 1970
@@ -22,7 +21,7 @@ final class ComicsDownloader {
         
         hash = hash.MD5                                                                           // Converting hash to md5 format
         
-        let query = "https://gateway.marvel.com:443/v1/public/comics?format=comic&limit=10"       // Query for random top 10 comics
+        let query = "https://gateway.marvel.com:443/v1/public/comics?format=comic"                // Query for random comics
         
         let link = query + "&ts=" + ts + "&apikey=" + publicKey + "&hash=" + hash                 // Constructing final link for API call
         guard let url = URL(string: link) else { return nil }
@@ -41,20 +40,5 @@ final class ComicsDownloader {
             print(error.localizedDescription)
         }
         return nil
-//        let request = URLRequest(url: url)
-//        URLSession.shared.dataTask(with: request) { data, _, error in
-//            if let data = data{
-//                let decoder = JSONDecoder()
-//                do {
-//                    let response = try decoder.decode(APIrequest.self, from: data)
-//                    DispatchQueue.main.async {
-//                        self.comics = response
-//                    }
-//                }
-//                catch {
-//                    print(error)
-//                }
-//            }
-//        }.resume()
     }
 }
