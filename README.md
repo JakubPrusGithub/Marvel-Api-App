@@ -1,10 +1,31 @@
-# Mobile iOS App with Marvel Comics 
+# 🦸‍♂️ Marvel Comics 
 
-Mobile applications for iOS, which displays 10 Marvel comics from it's API.
+Introducing the Marvel Comics App, simple iOS application for all Marvel Comics fans! Powered by the official Marvel API, this app offers an immersive and comprehensive experience, providing users with access to a vast library of Marvel Comics content.
 
-Each comic is presented individually in a scroll view. User can read title, description, authors and see the thumbnail. There is also a searchbar for titles. After clicking one of the comics, detail view is presented with more info and upscaled image.
+With this iOS app, users can explore a rich collection of Marvel Comics, making it easy to find their favorite Marvel stories. The app also provides detailed information about each comic, including cover art, description and authors.
+<br><br>
 
-<p align="center">https://user-images.githubusercontent.com/56788369/213824527-4765aeee-4cc5-47f9-a6cc-5215c5de62ba.mov</p>
+<h2> Used technology 🛠️</h2>
+<ul>
+  <li>SwiftUI</li>
+  <li>Concurrency</li>
+  <li>MVVM architecture pattern</li>
+  <li>API</li>
+  <li>XCTest - Unit tests</li>
+  <li>Searchbar and sheets</li>
+</ul><br>
 
-Technology: SwiftUI<br>
-Total time: ~12h
+<h2> Concept 💡</h2>
+
+It was my first stand-alone project, which taught me the basics of SwiftUI. I focused on proccesing the API call and format the data properly into comics. After some time I came back to this project to refactor it and to write unit tests for it. <br><br>
+
+<h2> Presentation 📲</h2>
+[coming soon...]
+
+<h2> Future plans 📋</h2>
+<ul>
+  <li>Reading section</li>
+  <li>Option to add to favorites</li>
+  <li>Sharing comics button</li>
+  <li>Bookshelf tab</li>
+</ul><br>
