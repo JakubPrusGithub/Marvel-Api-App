@@ -77,7 +77,11 @@ struct APIthumbnail: Codable {
     static let sampleAPIthumbnail = APIthumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available")
 }
 
-struct Comic: Codable, Identifiable {
+struct Comic: Codable, Identifiable, Equatable {
+    static func == (lhs: Comic, rhs: Comic) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id: Int?
     var title: String?
     var description: String?
@@ -87,10 +91,18 @@ struct Comic: Codable, Identifiable {
     static let sampleComic = Comic(id: 1, title: "Sample title", description: "Sample description", thumbnail: APIthumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"), creators: APIauthors(items: [APIauthor(name: "Sample author")]))
 }
 
-struct APIdata: Codable {
+struct APIdata: Codable, Equatable {
+    static func == (lhs: APIdata, rhs: APIdata) -> Bool {
+        lhs.results == rhs.results
+    }
+    
     var results: [Comic]?
 }
 
-struct APIrequest: Codable{
+struct APIrequest: Codable, Equatable{
+    static func == (lhs: APIrequest, rhs: APIrequest) -> Bool {
+        lhs.data == rhs.data
+    }
+    
     var data: APIdata?
 }

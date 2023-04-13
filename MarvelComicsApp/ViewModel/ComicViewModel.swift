@@ -19,7 +19,13 @@ class ComicViewModel: ObservableObject {
         }
         var result = ""
         for i in 0..<(authors.count) {
-            result += (authors[i].name ?? "Anonymous") + ", "
+            if var name = authors[i].name {
+                if name.isEmpty { name = "Anonymous" }
+                result += name + ", "
+            }
+            else{
+                result += (authors[i].name ?? "Anonymous") + ", "
+            }
         }
         
         // Delete ", " and replace it with period
