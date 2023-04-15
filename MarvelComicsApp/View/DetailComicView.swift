@@ -56,7 +56,6 @@ struct DetailComicView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        //DetailComicView(comic: Comic(title: "Title of a Marvel Comic", description: "Very long and detailed description about currently selected Marvel comic", creators: APIauthors(items: [APIauthor(name: "Written by anonymous")])))
         DetailComicView(comic: Comic())
     }
 }
