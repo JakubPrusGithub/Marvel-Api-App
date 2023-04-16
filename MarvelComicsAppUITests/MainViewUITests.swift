@@ -7,35 +7,112 @@
 
 import XCTest
 
+// Naming Structure: test_UnitOfWork_StateUnderTest_ExpectedBehaviour
+
+// Testing Structure: Given, When, Then
+
 final class MainViewUITests: XCTestCase {
+    
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDownWithError() throws { }
+    
+    func test_MainView_ForEach_isClickable() {
+        // Given
+        app.launch()
+        
+        // When
+        sleep(5)
+        
+        // Then
+        app.scrollViews.otherElements.buttons.firstMatch.tap()
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    func test_MainView_Sheet_isDraggable() {
+        // Given
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        // When
+        sleep(5)
+        app.scrollViews.otherElements.buttons.firstMatch.tap()
+        sleep(1)
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        // Then
+        
+        app.buttons["Sheet Grabber"].swipeUp()
+        app.buttons["Sheet Grabber"].swipeUp()
+    }
+    
+    func test_MainView_Sheet_isDismissable() {
+        // Given
+        app.launch()
+
+        // When
+        sleep(5)
+        app.scrollViews.otherElements.buttons.firstMatch.tap()
+        sleep(1)
+
+        // Then
+        let popoverdismissregionElement = app.windows.children(matching: .other).element(boundBy: 1)/*@START_MENU_TOKEN@*/.otherElements["PopoverDismissRegion"]/*[[".otherElements[\"dismiss popup\"]",".otherElements[\"PopoverDismissRegion\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        popoverdismissregionElement.tap()
+        sleep(1)
+        XCTAssertFalse(popoverdismissregionElement.exists)
+    }
+    
+    func test_MainView_backButton_isAbleToReturnToMainView(){
+        // Given
+        app.launch()
+        
+        // When
+        sleep(5)
+        app.scrollViews.otherElements.buttons.firstMatch.tap()
+        sleep(1)
+        let popoverdismissregionElement = app.windows.children(matching: .other).element(boundBy: 1)/*@START_MENU_TOKEN@*/.otherElements["PopoverDismissRegion"]/*[[".otherElements[\"dismiss popup\"]",".otherElements[\"PopoverDismissRegion\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        popoverdismissregionElement.tap()
+        sleep(1)
+        
+        app.navigationBars["Details"].buttons["Marvel Comics"].tap()
+        
+        // Then
+        let marvelComicsStartScreen = app.navigationBars["Marvel Comics"].staticTexts["Marvel Comics"]
+        XCTAssertTrue(marvelComicsStartScreen.exists)
+    }
+    
+    func test_MainView_Searchbar_isClickable() {
+        // Given
+        app.launch()
+        
+        // When
+        let searchbar = app.navigationBars["Marvel Comics"].searchFields["Search your comic's title"]
+        searchbar.tap()
+        
+        // Then
+        XCTAssertTrue(searchbar.exists)
+        XCTAssertTrue(searchbar.isHittable)
+        XCTAssertTrue(searchbar.isEnabled)
+    }
+    
+    func test_MainView_Searchbar_presentsClickableResults(){
+        // Given
+        app.launch()
+        sleep(5)
+        
+        // When
+        app.navigationBars["Marvel Comics"].searchFields["Search your comic's title"].tap()
+        
+        // --- Searching "Title" keyword ---
+        app/*@START_MENU_TOKEN@*/.keys["T"]/*[[".keyboards.keys[\"T\"]",".keys[\"T\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.keys["i"]/*[[".keyboards.keys[\"i\"]",".keys[\"i\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.keys["t"]/*[[".keyboards.keys[\"t\"]",".keys[\"t\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.keys["l"]/*[[".keyboards.keys[\"l\"]",".keys[\"l\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        // Then
+        let result = app.scrollViews.otherElements.buttons.firstMatch
+        XCTAssertTrue(result.exists)
     }
 }
