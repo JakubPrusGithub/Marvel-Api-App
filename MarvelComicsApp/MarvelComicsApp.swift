@@ -12,8 +12,8 @@ import SwiftUI
 struct MarvelComicsApp: App {
     var body: some Scene {
         WindowGroup {
-            //MainView(comicsDownloader: ComicsDownloader())
-            MainView(comicsDownloader: MockComicsDownloader())
+            MainView(comicsDownloader: ComicsDownloader())  // Real API Call
+            //MainView(comicsDownloader: MockComicsDownloader())    // Dependency Injection
         }
     }
 }
